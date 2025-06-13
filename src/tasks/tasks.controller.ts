@@ -1,11 +1,10 @@
 import { Controller, Get, Post, Body, Param, UseGuards } from '@nestjs/common';
 import { TasksService } from './tasks.service';
-import { CreateTaskDto } from './dto/create-task.dto';
 import { JwtAuthGuard } from 'src/auth/strategies/jwt.auth.guard';
 import { User } from 'src/common/decorators/user.decorator';
 import { Roles } from 'src/common/decorators/roles.decorator';
 import { RolesGuard } from 'src/common/guards/roles.guard';
-import { CreateTaskSchema } from './schemas/create-task.schema';
+import { CreateTaskDto, CreateTaskSchema } from './schemas/create-task.schema';
 import { ZodValidationPipe } from 'src/common/pipes/zod-validation.pipe';
 
 @Controller('tasks')
